@@ -24,8 +24,8 @@ def main(page: ft.Page):
     # --- Page setup ---
     page.title = "User Login"
     try:
-        page.window.width = 400
-        page.window.height = 350
+        page.window.width = 1200
+        page.window.height = 800
     except Exception:
         pass
     try:
@@ -44,6 +44,7 @@ def main(page: ft.Page):
         weight=ft.FontWeight.BOLD,
         font_family="Arial",
         text_align=ft.TextAlign.CENTER,
+        color=ft.Colors.BLACK,
     )
 
     username_field = ft.TextField(
@@ -54,7 +55,10 @@ def main(page: ft.Page):
         autofocus=True,
         prefix_icon=ft.Icons.PERSON,
         color=ft.Colors.BLACK,  # <-- Input value color
-        hint_style=ft.TextStyle(color=ft.Colors.GREY_600),
+        hint_style=ft.TextStyle(color=ft.Colors.BLACK),
+        label_style=ft.TextStyle(color=ft.Colors.BLACK),
+        helper_style=ft.TextStyle(color=ft.Colors.BLACK),
+    
     )
     username_wrapper = ft.Container(
         content=username_field,
@@ -72,7 +76,9 @@ def main(page: ft.Page):
         can_reveal_password=True,
         prefix_icon=ft.Icons.LOCK,
         color=ft.Colors.BLACK,  # <-- Input value color
-        hint_style=ft.TextStyle(color=ft.Colors.GREY_600),
+        hint_style=ft.TextStyle(color=ft.Colors.BLACK),
+        label_style=ft.TextStyle(color=ft.Colors.BLACK),
+        helper_style=ft.TextStyle(color=ft.Colors.BLACK),
     )
     password_wrapper = ft.Container(
         content=password_field,
@@ -217,7 +223,7 @@ def main(page: ft.Page):
         width=100,
         style=ft.ButtonStyle(
         bgcolor=ft.Colors.BLUE_400,   
-        color=ft.Colors.WHITE         
+        color=ft.Colors.WHITE,    
         ),
     )
 
